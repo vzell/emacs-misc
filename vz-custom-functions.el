@@ -1,6 +1,6 @@
 ;;; vz-org
 
-(require "rect")
+(require 'rect)
 
 (defun vz-org-trim (s)
   "Remove whitespace at beginning and end of string."
