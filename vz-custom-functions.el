@@ -1,5 +1,7 @@
 ;;; vz-org
 
+(require "rect")
+
 (defun vz-org-trim (s)
   "Remove whitespace at beginning and end of string."
   (if (string-match "\\`[ \t\n\r]+" s) (setq s (replace-match "" t t s)))
