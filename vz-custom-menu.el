@@ -78,12 +78,18 @@
     ["Highlight Lines Matching Regexp"     highlight-lines-matching-regexp]
     ))
 
+(defvar menuitem-minor-modes
+  '("Minor Modes" ; Note that list must be quoted, otherwise it would be treated as function.
+    ["Buttonize URLs and e-mail addresses"     goto-address-mode]
+    ))
+
 (easy-menu-define test-menu nil "Menu used as an example."
   `("Test menu"
     ,menuitem1
     ,menuitem2
-    ,menuitem3
+    ,menuitem-whitespace
     ,menuitem-lines
+    ,menuitem-minor-modes
     ["Items can also be defined here" (lambda () (interactive) (message-box "It's simple!"))]
     )
   )
