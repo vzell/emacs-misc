@@ -83,6 +83,14 @@
     ["Buttonize URLs and e-mail addresses"     goto-address-mode]
     ))
 
+(defvar menuitem-packages
+  '("Packages" ; Note that list must be quoted, otherwise it would be treated as function.
+    ["Just one space"          just-one-space]
+    ("Magit"
+     ["Magit browse thing - C-c C-w" (lambda () (interactive))]
+     )
+    ))
+
 (easy-menu-define test-menu nil "Menu used as an example."
   `("Test menu"
     ,menuitem1
@@ -90,6 +98,7 @@
     ,menuitem-whitespace
     ,menuitem-lines
     ,menuitem-minor-modes
+    ,menuitem-packages
     ["Items can also be defined here" (lambda () (interactive) (message-box "It's simple!"))]
     )
   )
