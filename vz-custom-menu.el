@@ -50,7 +50,7 @@
   ["Show fireworks!" (lambda () (interactive) (message-box "Fun!"))]) ; Making function interactive
 
 ;;Menu with submenus.
-(defvar menuitem3
+(defvar menuitem-whitespace
   '("Whitespace" ; Note that list must be quoted, otherwise it would be treated as function.
     ["Just one space"          just-one-space]
     ["Fixup whitespace"        fixup-whitespace]
