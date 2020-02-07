@@ -122,24 +122,27 @@ The codeblock marked is the one that contains point or is before point."
         )
     (save-excursion
       (goto-char beg)
-      (if (looking-at "^/\\(ssh\\|sudo:\\):")
-	  (find-file (vz-org-trim cmd))
-	(progn
-	  (or (setq process (get-buffer-process "*shell*")) ; look for process 
-	      (setq process (get-buffer-process (shell))) ; or create process 
-	      (error "Unable to create SHELL session."))
-	  (set-buffer this-buffer)
-	  (switch-to-buffer-other-window (process-buffer process))
-	  (goto-char (point-max))
-	  (recenter 0)
-	  (insert (format "\n                                    Output from buffer '%s':\n"
-			  (buffer-name this-buffer)))
-;;	  (insert "Command begin\n" (vz-org-trim cmd) "\nCommand end\n")
-	  (set-marker (process-mark process) (point))
-	  (comint-send-string process (vz-org-trim cmd))
-	  (comint-send-string process "\n")
-	  (switch-to-buffer-other-window this-buffer)
-	  )))))
+      (cond ((looking-at "^dired:")
+	     (find-file (substring cmd 6 -1)))
+	    ((looking-at "^/\\(ssh\\|sudo:\\):")
+	     (find-file (vz-org-trim cmd)))
+	    (t (progn
+		 (or (setq process (get-buffer-process "*shell*")) ; look for process
+		     (setq process (get-buffer-process (shell))) ; or create process
+		     (error "Unable to create SHELL session."))
+		 (set-buffer this-buffer)
+		 (switch-to-buffer-other-window (process-buffer process))
+		 (goto-char (point-max))
+		 (recenter 0)
+		 (insert (format "\n                                    Output from buffer '%s':\n"
+				 (buffer-name this-buffer)))
+		 ;;	  (insert "Command begin\n" (vz-org-trim cmd) "\nCommand end\n")
+		 (set-marker (process-mark process) (point))
+		 (comint-send-string process (vz-org-trim cmd))
+		 (comint-send-string process "\n")
+		 (switch-to-buffer-other-window this-buffer)
+		 ))
+	    ))))
 
 (defun vz-org-send-region-to-other-window-2 (beg end)
   "Send the current region to the process running in the other window for execution or edit with Tramp. *shell-2*"
