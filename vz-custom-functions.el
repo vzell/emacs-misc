@@ -1057,4 +1057,37 @@ Version 2019-05-25"
       (forward-line 1))))
 
 
+(defun vz-one-space-in-region (beg end)
+  "Replace all whitespace in the region with single spaces"
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (re-search-forward "\\s-+" nil t)
+        (replace-match " ")))))
+
+(defun vz-no-space-in-region (beg end)
+  "Replace all whitespace in the region with no spaces at all"
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (re-search-forward "\\s-+" nil t)
+        (replace-match "")))))
+
+(defun vz-one-space-in-rect-line (start end)
+  (save-restriction
+    (save-match-data
+      (narrow-to-region (+ (point) start)
+                        (+ (point) end))
+      (while (re-search-forward "\\s-+" nil t)
+        (replace-match " ")))))
+
+(defun vz-one-space-in-rect (start end)
+  "Replace all whitespace in the rectangle with single spaces"
+  (interactive "r")
+  (apply-on-rectangle 'vz-one-space-in-rect-line start end))
+
 (provide 'vz-custom-functions)
