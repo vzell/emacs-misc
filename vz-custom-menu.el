@@ -85,7 +85,7 @@
 
 (defvar menuitem-packages
   '("Packages" ; Note that list must be quoted, otherwise it would be treated as function.
-    ["Just one space"          just-one-space]
+    ["Describe personal keybindings" describe-personal-keybindings]
     ("Magit"
      ["Magit browse thing - C-c C-w" (lambda () (interactive))]
      )
