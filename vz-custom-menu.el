@@ -90,6 +90,10 @@
      ["Browse thing - C-c C-w" (lambda () (interactive))]
      ["Show log of current buffer" magit-log-buffer-file]
      )
+    ("Straight"
+     ["Fetch package and dependencies" straight-fetch-package-and-deps]
+     ["Pull package and dependencies" straight-pull-package-and-deps]
+     )
     ))
 
 (easy-menu-define test-menu nil "Menu used as an example."
