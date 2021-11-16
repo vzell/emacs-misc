@@ -87,7 +87,8 @@
   '("Packages" ; Note that list must be quoted, otherwise it would be treated as function.
     ["Describe personal keybindings" describe-personal-keybindings]
     ("Magit"
-     ["Magit browse thing - C-c C-w" (lambda () (interactive))]
+     ["Browse thing - C-c C-w" (lambda () (interactive))]
+     ["Show log of current buffer" magit-log-buffer-file]
      )
     ))
 
