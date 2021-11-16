@@ -99,7 +99,6 @@
 (easy-menu-define test-menu nil "Menu used as an example."
   `("Test menu"
     ,menuitem1
-    ,menuitem2
     ,menuitem-whitespace
     ,menuitem-lines
     ,menuitem-minor-modes
