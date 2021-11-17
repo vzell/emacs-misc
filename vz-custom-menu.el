@@ -89,10 +89,12 @@
     ("Magit"
      ["Browse thing - C-c C-w" (lambda () (interactive))]
      ["Show log of current buffer" magit-log-buffer-file]
+     ["Version" magit-version]
      )
     ("Straight"
      ["Fetch package and dependencies" straight-fetch-package-and-deps]
      ["Pull package and dependencies" straight-pull-package-and-deps]
+     ["Version" straight-version]
      )
     ))
 
