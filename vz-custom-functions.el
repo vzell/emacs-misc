@@ -436,7 +436,7 @@ This is useful to clean Oracle lab documentation"
   (open-line 1)
   )
 
-(global-set-key [(f12)] 'vz-kill-lines-until-non-hash)
+;(global-set-key [(f12)] 'vz-kill-lines-until-non-hash)
 
 ;;; Clean up course pdf contents for use in org-mode
 
