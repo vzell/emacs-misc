@@ -100,10 +100,16 @@
 
 (defvar menuitem-bruce-springsteen
   '("Bruce Springsteen" ; Note that list must be quoted, otherwise it would be treated as function.
-    ["Split setlist and ULRify from BruceBase"    vz-split-setlist-and-urlify]
+    ["Split setlist and ULRify from BruceBase"                       vz-split-setlist-and-urlify]
     "-----"
-    ["Prepare artist list for MusicBrainz lookup" vz-prepare-for-mb-artist-search]
-    ["Prepare artist list entry in vz-bruce.el"   vz-prepare-for-vz-bruce-el]
+    ["Prepare artist list for MusicBrainz lookup"                    vz-prepare-for-mb-artist-search]
+    ["Prepare artist list entry in vz-bruce.el"                      vz-prepare-for-vz-bruce-el]
+    "-----"
+    ["Surround with italic quotes"                		     vz-surround-with-quotes-italic]
+    ["Surround with typewriter quotes"            		     vz-surround-with-quotes]
+    ["URLify BruceBase gig notes"                 		     vz-mb-urlify-gignote]
+    ["URLify artists for MB event page (prepended with '@ ')"        vz-mb-urlify-artists]
+    ["Prepare line for MBID association (prepended with '! ')"       vz-mb-mbid-prepare]
     ))
 
 (easy-menu-define test-menu nil "Menu used as an example."
