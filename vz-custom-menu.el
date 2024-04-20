@@ -80,7 +80,7 @@
 
 (defvar menuitem-minor-modes
   '("Minor Modes" ; Note that list must be quoted, otherwise it would be treated as function.
-    ["Buttonize URLs and e-mail addresses"     goto-address-mode]
+    ["Buttonize URLs and e-mail addresses" goto-address-mode]
     ))
 
 (defvar menuitem-packages
@@ -88,18 +88,27 @@
     ["Describe personal keybindings" describe-personal-keybindings]
     ("Magit"
      ["Browse thing - C-c C-w" (lambda () (interactive))]
-     ["Show log of current buffer" magit-log-buffer-file]
+     ["Show log of current buffer"     magit-log-buffer-file]
      ["Version" magit-version]
      )
     ("Straight"
      ["Fetch package and dependencies" straight-fetch-package-and-deps]
-     ["Pull package and dependencies" straight-pull-package-and-deps]
+     ["Pull package and dependencies"  straight-pull-package-and-deps]
      ["Version" straight-version]
      )
     ))
 
+(defvar menuitem-bruce-springsteen
+  '("Bruce Springsteen" ; Note that list must be quoted, otherwise it would be treated as function.
+    ["Split setlist and ULRify from BruceBase"    vz-split-setlist-and-urlify]
+    "-----"
+    ["Prepare artist list for MusicBrainz lookup" vz-prepare-for-mb-artist-search]
+    ["Prepare artist list entry in vz-bruce.el"   vz-prepare-for-vz-bruce-el]
+    ))
+
 (easy-menu-define test-menu nil "Menu used as an example."
   `("Test menu"
+    ,menuitem-bruce-springsteen
     ,menuitem1
     ,menuitem-whitespace
     ,menuitem-lines
