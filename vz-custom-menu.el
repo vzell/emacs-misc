@@ -110,6 +110,8 @@
     ["URLify BruceBase gig notes"                 		     vz-mb-urlify-gignote]
     ["URLify artists for MB event page (prepended with '@ ')"        vz-mb-urlify-artists]
     ["Prepare line for MBID association (prepended with '! ')"       vz-mb-mbid-prepare]
+    ["Prepare for copying artist URL to MB event page"               vz-prepare-for-copying-artist-URL-to-MB-event-page]
+    ["Make URLs clickable"                                           goto-address-mode]
     ))
 
 (easy-menu-define test-menu nil "Menu used as an example."
