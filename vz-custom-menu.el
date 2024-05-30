@@ -113,6 +113,8 @@
     ["Search arist via MB API (prepended with '')"                   vz-prepare-for-mb-artist-search]
     ["Prepare for copying artist URL to MB event page"               vz-prepare-for-copying-artist-URL-to-MB-event-page]
     ["Make URLs clickable"                                           goto-address-mode]
+    "-----"
+    ["URLify artists in setlists"                                    vz-mb-urlify-artists-in-setlists]
     ))
 
 (easy-menu-define test-menu nil "Menu used as an example."
