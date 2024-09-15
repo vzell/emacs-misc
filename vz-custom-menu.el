@@ -68,13 +68,21 @@
 ;;Menu with submenus.
 (defvar menuitem-lines
   '("Lines" ; Note that list must be quoted, otherwise it would be treated as function.
-    ["List Matching Lines"            	   list-matching-lines]
-    ["Delete Matching Lines"          	   delete-matching-lines]
-    ["Delete Non-Matching Lines"      	   delete-non-matching-lines]
-    ["Delete Duplicate Lines"         	   delete-duplicate-lines]
-    ["Sort Lines"                     	   sort-lines]
-    ["Sort Numeric Fields"            	   sort-numeric-fields]
-    ["Reverse Region"                 	   reverse-region]
+    ["List Matching Lines"                 list-matching-lines]
+    "-----"
+    ["Delete Matching Lines"               delete-matching-lines]
+    ["Delete Non-Matching Lines"           delete-non-matching-lines]
+    ["Delete Duplicate Lines"              delete-duplicate-lines]
+    "-----"
+    ["Join Line"                           join-line]
+    ["Fill Region"                         fill-region]
+    ["Fill Paragraph"                      fill-paragraph]
+    "-----"
+    ["Sort Lines"                          sort-lines]
+    ["Sort Numeric Fields"                 sort-numeric-fields]
+    "-----"
+    ["Reverse Region"                      reverse-region]
+    "-----"
     ["Highlight Lines Matching Regexp"     highlight-lines-matching-regexp]
     ))
 
@@ -105,9 +113,9 @@
     ["Prepare artist list for MusicBrainz lookup"                    vz-prepare-for-mb-artist-search]
     ["Prepare artist list entry in vz-bruce.el"                      vz-prepare-for-vz-bruce-el]
     "-----"
-    ["Surround with italic quotes"                		     vz-surround-with-quotes-italic]
-    ["Surround with typewriter quotes"            		     vz-surround-with-quotes]
-    ["URLify BruceBase gig notes"                 		     vz-mb-urlify-gignote]
+    ["Surround with italic quotes"                                   vz-surround-with-quotes-italic]
+    ["Surround with typewriter quotes"                               vz-surround-with-quotes]
+    ["URLify BruceBase gig notes"                                    vz-mb-urlify-gignote]
     ["URLify artists for MB event page (prepended with '@ ')"        vz-mb-urlify-artists]
     ["Prepare line for MBID association (prepended with '! ')"       vz-mb-mbid-prepare]
     ["Search arist via MB API (prepended with '')"                   vz-prepare-for-mb-artist-search]
