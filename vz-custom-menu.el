@@ -109,6 +109,7 @@
 (defvar menuitem-bruce-springsteen
   '("Bruce Springsteen" ; Note that list must be quoted, otherwise it would be treated as function.
     ["Split setlist and ULRify from BruceBase"                       vz-split-setlist-and-urlify]
+    ["Create new event entries for adding releases to MB"            bl-create-new-entries]
     "-----"
     ["Prepare artist list for MusicBrainz lookup"                    vz-prepare-for-mb-artist-search]
     ["Prepare artist list entry in vz-bruce.el"                      vz-prepare-for-vz-bruce-el]
